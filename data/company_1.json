@@ -1,0 +1,27 @@
+{
+  "shortName": "ABC Corp",
+  "name": "ABC Corporation",
+  "incorporationDate": "2020-05-15",
+  "addresses": [
+    {
+      "suite": "Suite 500",
+      "street": "123 Main St",
+      "city": "San Francisco",
+      "state": "CA",
+      "country": "USA",
+      "zipCode": "94105"
+    }
+  ],
+  "products": [
+    {
+      "name": "Gadget X",
+      "description": "A high-tech gadget",
+      "price": 299.99
+    },
+    {
+      "name": "Widget Y",
+      "description": "A useful widget",
+      "price": 99.99
+    }
+  ]
+}

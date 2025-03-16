@@ -1,0 +1,27 @@
+{
+  "shortName": "APPLE",
+  "name": "APPLE Inc",
+  "incorporationDate": "2020-05-15",
+  "addresses": [
+    {
+      "suite": "Steve Jobs Arena",
+      "street": "1 Apple Parkway",
+      "city": "Cupertino",
+      "state": "CA",
+      "country": "USA",
+      "zipCode": "94302"
+    }
+  ],
+  "products": [
+    {
+      "name": "Iphone 16",
+      "description": "A mobile",
+      "price": 299.99
+    },
+    {
+      "name": "Macbook Air",
+      "description": "A laptop",
+      "price": 99.99
+    }
+  ]
+}

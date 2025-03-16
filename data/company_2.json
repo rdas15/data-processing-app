@@ -1,0 +1,27 @@
+{
+  "shortName": "SAMSUNG",
+  "name": "SAMSUNG Corporation",
+  "incorporationDate": "2020-05-15",
+  "addresses": [
+    {
+      "suite": "Suite 500",
+      "street": "23 Sunset Bouelvard",
+      "city": "Los Angeles",
+      "state": "CA",
+      "country": "USA",
+      "zipCode": "94105"
+    }
+  ],
+  "products": [
+    {
+      "name": "Galaxy S25",
+      "description": "A mobile",
+      "price": 299.99
+    },
+    {
+      "name": "Galaxy Book5",
+      "description": "A laptop",
+      "price": 99.99
+    }
+  ]
+}

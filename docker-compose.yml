@@ -1,0 +1,57 @@
+
+services:
+
+  activemq:
+    image: apache/activemq-artemis:latest
+    container_name: activemq_container
+    hostname: activemq_container
+    ports:
+      - "61616:61616"
+      - "8161:8161"
+
+
+  opensearch:
+    image: opensearchproject/opensearch:latest
+    container_name: opensearch_container
+    hostname: opensearch_container
+    ports:
+      - "9200:9200"
+      - "9300:9300"
+      - "9600:9600"
+    environment:
+      - discovery.type=single-node
+      - "DISABLE_SECURITY_PLUGIN=true"
+      - "OPENSEARCH_JAVA_OPTS=-Xms512m -Xmx512m"
+      - "OPENSEARCH_INITIAL_ADMIN_PASSWORD=Einstein@1921"
+      - "network.host=0.0.0.0"
+    healthcheck:
+      test: [ "CMD", "curl", "-f", "http://opensearch_container:9200/_cluster/health" ]
+      interval: 10s
+      retries: 5
+      start_period: 20s
+
+
+  opensearch-dashboards:
+    image: opensearchproject/opensearch-dashboards:latest
+    container_name: opensearch-dashboards
+    ports:
+      - "5601:5601"
+    environment:
+      OPENSEARCH_HOSTS: '["http://opensearch_container:9200"]'
+      DISABLE_SECURITY_DASHBOARDS_PLUGIN: "true"
+
+
+  data-processor-app:
+    build: .
+    container_name: data-processor-app
+    ports:
+      - "8080:8080"
+    depends_on:
+      - activemq
+      - opensearch
+    environment:
+      OPENSEARCH_URL: "http://opensearch_container:9300"
+      ACTIVEMQ_HOST: "activemq_container"
+
+
+
