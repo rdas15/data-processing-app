@@ -1,0 +1,50 @@
+spring:
+  application:
+    name: data-processor-service
+  datasource:
+    url: jdbc:h2:mem:mydatabase
+    driverClassName: org.h2.Driver
+    username: sa
+    password:
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: update
+  h2:
+    console:
+      enabled: true
+
+  artemis:
+    host: ${ACTIVEMQ_HOST}
+#    host: localhost
+    port: 61616
+    user: artemis
+    password: artemis
+    mode: native
+
+  jackson:
+    serialization:
+      fail-on-empty-beans: false
+    deserialization:
+      fail-on-unknown-properties: false
+    date-format: yyyy-MM-dd
+    time-zone: UTC
+
+opensearch:
+  uris: ${OPENSEARCH_URL}
+#  uris: https://localhost:9200
+  username: admin  # Default OpenSearch user
+  password: Einstein@1921  # Your set password
+
+ingestion:
+  completion-queue: ingestion-completionq
+processing:
+  completion-queue: processing-completionq
+
+email:
+  recipient: abc@gmail.com
+
+#debug: true
+#logging:
+#  level:
+#    root: DEBUG

@@ -42,10 +42,7 @@ yarn-error.log
 Thumbs.db
 
 # Environment variables
-.env
-*.properties
-application.yml
-application-*.yml
+
 secrets.json
 
 # Database files
@@ -53,5 +50,4 @@ secrets.json
 *.mv.db
 *.sqlite
 
-# Docker
-docker-compose.override.yml
+
